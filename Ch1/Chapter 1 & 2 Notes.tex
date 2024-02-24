@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{amssymb}
+\let\oldsi\si
+\renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
+\usepackage{enumitem}
+\newcommand{\degsym}{^{\circ}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[3]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+
+\title{Math AA HL at KCA - Chapter 1 \& 2 Notes}
+\author{Tim Bao 2023-2025}
+\date{February 24, 2024}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+
+\section{Discriminants}
+
+The discriminants of a quadratic function $$ax^2 + bx + c$$ is given by $$D = b^2 - 4ac$$
+\begin{enumerate}
+  \item When $D = 0$, there is \textbf{only one} distinct root
+  \item When $D > 0$, there are \textbf{two} distinct roots
+  \item When $D < 0$, there are \textbf{two complex} roots, pairwise conjugate
+\end{enumerate}
+
+\subsection*{Typical Exam Question}
+
+Let $f(x)$ be a quadratic and $g(x)$ be another quadratic or a linear function. Now the question is, "Find some sort of constant, e.g. $k$, in the coefficient of $f(x)$", when
+
+\begin{enumerate}
+  \item Either $f(x)$ and $g(x)$ has no intersections,
+  \item Or $f(x)$ and $g(x)$ has two intersections
+  \item Or $f(x)$ and $g(x)$ has exactly one intersection
+\end{enumerate}
+\textbf{Key idea}: set $f(x) - g(x) = 0$ and use the discriminant of the resulting function $f(x) - g(x)$ to tackle the target case.
+
+\pagebreak
+
+\section{Linear Functions and Gaussian Elimination}
+
+The straight line distance between two points is given by $$\sqrt{\Delta x^2 + \Delta y^2}$$\lb
+Properties of linear functions
+\begin{itemize}
+  \item Two parallel lines have gradients $m_1 = m_2$
+  \item Two perpendicular lines have gradients $m_1 = -\frac{1}{m_2} \iff m_2 = -\frac{1}{m_1}$
+  \item The point of intersection between $f(x)$ and $g(x)$ is found by solving $f(x) = g(x)$
+\end{itemize}
+
+\noindent Gaussian elimination is a way of solving a system of linear equations. The goal is to transform all numbers below the main diagonal to zero.
+
+\img{figs/gauss.png}{0.5}{Gaussian Elimination}
+
+\noindent Let the third column represent the variable $z$ and the final row after elimination be $az = b$. The following summarizes the implications of the final row
+\begin{enumerate}
+  \item $0z = b\,,b\not=0 \implies $ $z$ has no solution; \textbf{inconsistent}
+  \item $0z = 0 \implies $ $z$ has infinitely many solutions, and the values of the other variables will be written in forms such as parametric equations. E.g. $z = t, x = 3t - 2, y = \frac{t}{2}$; \textbf{consistent}
+  \item $az = b$ with $a \not = 0$ $\implies$ the system has a unique solution; \textbf{consistent}.
+\end{enumerate}
+
+\end{document}
