@@ -6,7 +6,10 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{float}
+\usepackage{outlines}
 \usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
 \let\oldsi\si
 \renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
 \usepackage{enumitem}
@@ -14,12 +17,29 @@
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
 \newcommand{\lb}{\\[8pt]}
 \newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
-\newcommand{\img}[2]{\begin{center}
+\newcommand{\img}[3]{\begin{center}
   \begin{figure}[H]
     \centering
     \includegraphics[width=#2\textwidth]{#1}
-    \caption{Labeled diagram}
+    \caption{#3}
     \label{fig:fig1}
+  \end{figure}
+\end{center}}
+\newcommand{\doubleimg}[4]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#1}
+      \caption{#2}
+      \label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#3}
+      \caption{#4}
+      \label{fig:sub2}
+    \end{subfigure}
   \end{figure}
 \end{center}}
 
@@ -32,6 +52,126 @@
 \maketitle
 \pagebreak
 
-\section{Introduction}
+\section{Quadratics}
+
+A quadratic function can be in any of the following three forms
+
+\begin{center}
+  \begin{tabular}{c|c|c}
+    Form     & General expression         & Features                                  \\ \hline
+    Standard & $ax^2 + bx + c$            & $c$ = $y$-intercept                       \\
+    Vertex   & $a(x - h)^2 + k$           & $(h, k)$ vertex; $x = h$ line of symmetry \\
+    Factored & $a(x - \alpha)(x - \beta)$ & $\alpha, \beta$ roots                     \\
+  \end{tabular}
+\end{center}
+
+\noindent The leading coefficient $a$ determines the concavity of the function
+\begin{itemize}
+  \item $a > 0 \implies$ the function is convex (tends to $\infty$)
+  \item $a < 0 \implies$ the function is concave (tends to $-\infty$)
+\end{itemize}
+
+\pagebreak
+
+\section{Sketching Cubics and Higher Degree Graphs}
+
+A polynomial of degree $n$ can have at most $n$ distinct roots. \lb
+The following features are to be considered when sketching a polynomial $f(x)$ with leading coefficient $a$
+
+\doubleimg{figs/cubic1.png}{$a > 0$}{figs/cubic2.png}{$a < 0$}
+
+\begin{outline}[enumerate]
+  \1 Behaviors as $x\to \pm\infty$; for a cubic:
+  \2 $a > 0 \implies$ as $x\to\pm\infty$, $y\to\pm\infty$
+  \2 $a < 0 \implies$ as $x\to\pm\infty$, $y\to\mp\infty$
+  \1 If the roots are $\alpha, \beta, \gamma$, then the $x$-intercepts are $(\alpha, 0)$, $(\beta, 0)$, $(\gamma, 0)$.
+  \1 The $y$-intercept, this can be found by $f(0)$
+  \1 The turning point(s), if applicable and necessary.
+\end{outline}
+
+\pagebreak
+
+\section{Mappings}
+
+A \textbf{relation} describes how values are mapped from one set onto another.\lb
+In the case of functions, values from the \textbf{domain} are mapped onto values in the \textbf{range}.\lb
+There are four types of mapping
+\img{figs/mapping.jpeg}{0.4}{Mappings}
+
+\noindent For a relation to be a function, it has to be either one-to-one or many-to-one. This is because each $x$ value inputted into the function must be associated with a single $y$ value.
+
+
+\subsection{Interval Notations}
+
+An opening/closing square bracket represents an inclusive end.\lb
+An opening/closing parenthesis represents an exclusive end.\lb
+E.g.
+\begin{itemize}
+  \item $x\in [a, b) \iff a \le x < b$
+  \item $x\in (-\infty, h] \iff x \le h$
+\end{itemize}
+
+
+\pagebreak
+
+
+\subsection{Domain and Range}
+
+The \textbf{range} is the set of $x$ values that can go into a function, and the \textbf{range} is the set of $y$ values that can come out of a function.\lb
+Notations for expressing a domain
+\begin{enumerate}
+  \item $x\in [a, b]$
+  \item $a \le x \le b$
+  \item $R = \{x \mid a \le x \le b \}$
+\end{enumerate}
+Notations for expressing a range
+\begin{enumerate}
+  \item $y\in [a, b]$
+  \item $f(x)\in [a, b]$
+  \item $a \le f(x) \le b$
+  \item $D = \{y \mid a \le y \le b \}$
+\end{enumerate}
+
+\pagebreak
+
+\subsection{Restricting the Domain}
+
+\doubleimg{figs/isfn.png}{Function}{figs/nofn.png}{Not a function}
+
+\noindent A relation is not a function if it does not pass the \textbf{vertical line test}, which states that: If \textit{at any point} in the domain of a relation, a vertical line intersects the graph at two or more points, then it is not a function.\lb
+For such a relation to be a function, the domain needs to be restricted such that the new domain passes the vertical line test.
+
+\pagebreak
+
+\section{Composite Functions}
+
+$$(f \circ g)(x) = f(g(x))$$
+
+Properties
+\begin{itemize}
+  \item Associativity $f\circ (g\circ h) = (f\circ g)\circ h$
+  \item $(f\circ g)^{-1} = g^{-1} \circ f^{-1}$
+\end{itemize}
+
+\section{Inverse Functions}
+The inverse function of a function $f(x)$ is denoted $f^{-1}(x)$, it is a reflection in the line $y = x$.\lb
+A \textbf{self-inverse} function is its own inverse, i.e. $f(x) \equiv f^{-1}(x)$. E.g. $y = \dfrac{1}{x}$ is a self-inverse function.\lb
+Implications:
+\begin{itemize}
+  \item $(f^{-1} \circ f)(x) = x$ and $(f \circ f^{-1})(x) = x$
+  \item The \textit{domain} of $f$ is the \textit{range} of $f^{-1}$, and vice versa
+  \item The intersections of $f(x)$ and $f^{-1}(x)$ lie on the line $y = x$ and can be found by $f(x) = x$ or $f^{-1}(x) = x$
+\end{itemize}
+To find an expression for the inverse function, exchange the $x$'s and $y$'s, then make the new $y$ the subject.
+
+\section{Even and Odd Functions}
+
+\begin{outline}[enumerate]
+  \1 Even functions: $f(-x) = f(x)$; symmetrical about the $y$-axis
+  \2 $f(x)$ has only even powers of $x$
+  \1 Odd functions: $f(-x) = -f(x)$; rotational symmetry of $180\degsym$ about the origin
+  \2 $f(x)$ has only odd powers of $x$
+\end{outline}
+
 
 \end{document}
