@@ -15,6 +15,14 @@
 \usepackage{enumitem}
 \newcommand{\degsym}{^{\circ}}
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 \newcommand{\lb}{\\[8pt]}
 \newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
 \newcommand{\img}[3]{\begin{center}
@@ -43,6 +51,8 @@
   \end{figure}
 \end{center}}
 
+
+
 \title{Math AA HL at KCA - Chapters 6 to 8 Notes}
 \author{Tim Bao 2023-2025}
 \date{February 25, 2024}
@@ -50,6 +60,8 @@
 \begin{document}
 
 \maketitle
+\pagebreak
+\tableofcontents
 \pagebreak
 
 \section{Quadratics}
@@ -194,6 +206,112 @@ Sometimes to restrict the domain such that there is an inverse, the turning poin
     $kf(x)$    & Vertical stretch by a factor of $k$             \\ \hline
   \end{tabular}
   \egroup
+\end{center}
+
+\pagebreak
+
+\section{Special Functions and Their Graphs}
+Sketching these functions involves looking at
+\begin{enumerate}
+  \item $x$ and $y$ intercepts
+  \item horizontal and vertical asymptotes
+  \item where $f(x)$ tends to as $x\to\pm\infty$
+  \item sometimes the turning points too
+\end{enumerate}
+
+\subsection{Rational/Reciprocal Functions}
+
+They take the general form of $$f(x) = \frac{ax + b}{cx + d}$$ and have the following properties
+\begin{itemize}
+  \item $x$-intercept = $(-\dfrac{b}{a}, 0)$; when $y = 0$ and $a\not = 0$
+  \item $y$-intercept = $(0, \dfrac{b}{d})$; when $x = 0$ and $d\not = 0$
+  \item vertical asymptote $x = -\dfrac{d}{c}$; when the denominator is 0
+  \item horizontal asymptote $y = \dfrac{a}{c}$; cancel out the b, d, and $x$'s, as the limit is obtained for very large values of $x$.
+\end{itemize}
+
+\pagebreak
+
+\subsection{Exponential Functions}
+
+They can take the form of $$f(x)=ka^{bx} + c,\,\,\, a > 0$$ and have the properties
+\begin{enumerate}
+  \item $y$-intercept $(k + c, 0)$
+  \item Horizontal asymptote $y = c$
+  \item No vertical asymptote
+  \item $b > 0 \implies \lim\limits_{x\to\infty}f(x) = \infty$; growth
+  \item $b < 0 \implies \lim\limits_{x\to-\infty}f(x) = \infty$; decay
+\end{enumerate}
+
+
+\subsection{Logarithmic Functions}
+
+They are the reflections of exponential functions in $y = x$. They have vertical asymptotes but not horizontal asymptotes.
+
+\pagebreak
+
+\subsection{Modulus Functions}
+
+Arithmetic rules
+
+\begin{enumerate}
+  \item $|-x| = |x|$
+  \item $|x|^2 = x^2$
+  \item $|xy| = |x||y|$
+  \item $\left|\dfrac{x}{y}\right| = \dfrac{|x|}{|y|}$
+\end{enumerate}
+
+\noindent These functions are formally defined as
+
+$$
+  |f(x)| = \left\{
+  \begin{array}{ll}
+    f(x)  & \mbox{if } f(x) \geq 0 \\
+    -f(x) & \mbox{if } f(x) < 0
+  \end{array}
+  \right.
+$$
+
+\noindent The graph is obtained by reflecting all parts below the $y$-axis through the $y$-axis so that they are all above it now.\lb
+In general, there are three ways of solving modulus equations/inequalities; solving manually will require the results to be substituted back into the equation to validate the answers and discard any invalid ones
+\begin{enumerate}
+  \item Split into cases. e.g. for $|a| = 3$, solve when $a = 3$ and also $a = -3$, then validate the results
+  \item If both sides are in absolute value, or only one side is and the other is a constant (e.g. $|a| = |b|$ or $|a| = 3$), then square both sides and solve from there
+  \item Sketch graphs and find intersections
+  \item Use the G.D.C
+\end{enumerate}
+The transformation of absolute value functions can be \textit{done step by step} and it is normally easier to visualize this way.
+
+\subsection{Graphs of \texorpdfstring{$[f(x)]^2$}{f(x) squared}}
+
+\begin{center}
+  \def\arraystretch{2}%
+  \begin{tabular}{c|c}
+    Feature of $f(x)$               & Feature of $[f(x)]^2$                    \\ \hline
+    Parts where $y < 0$             & $y > 0$                                  \\
+    this i the p
+    $(a, 0)$ is an x-intercept      & $(a, 0)$ local minimum                   \\
+    $(0, b)$ is a y-intercept       & $(0, b^2)$ y-intercept                   \\
+    $x=a$ is a vertical asymptote   & unchanged                                \\
+    $y=b$ is a horizontal asymptote & $y = b^2$ becomes a horizontal asymptote \\
+    $y\to \pm\infty$                & $y \to \infty$                           \\
+  \end{tabular}
+\end{center}
+
+
+\subsection{Graphs of \texorpdfstring{$\frac{1}{f(x)}$}{the reciprocal of f(x)}}
+
+\begin{center}
+  \def\arraystretch{2}%
+  \begin{tabular}{c|c}
+    Feature of $f(x)$                      & Feature of $\frac{1}{f(x)}$                 \\ \hline
+    $x=a$ is an x-intercept                & $x = a$ is a vertical asymptote             \\
+    $(0, b),\, b\not=0$ is a y-intercept   & $(0, \frac{1}{b})$ becomes the y-intercept  \\
+    $x=a$ is a vertical asymptote          & x-intercept at $(a, 0)$                     \\
+    $y=b$ is a horizontal asymptote        & $y = \frac{1}{b}$ is a horizontal asymptote \\
+    $y=0$ is a horizontal asymptote        & $y\to \pm \infty$                           \\
+    $y\to \pm\infty$                       & $y = 0$ is a horizontal asymptote           \\
+    $(a, b),\, b\not=0$ is a turning point & $(a, \frac{1}{b})$ is a turning point       \\
+  \end{tabular}
 \end{center}
 
 \end{document}
