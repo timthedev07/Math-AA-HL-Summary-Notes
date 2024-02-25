@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{amssymb}
+\let\oldsi\si
+\renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
+\usepackage{enumitem}
+\newcommand{\degsym}{^{\circ}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[3]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+
+\title{Math AA HL at KCA - Chapter 3 Notes}
+\author{Tim Bao 2023-2025}
+\date{February 24, 2024}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+
+\section{Laws of Exponents}
+
+\begin{enumerate}
+  \item $a^m \times a^n = a^{m + n}$
+  \item $a^m \div a^n = a^{m - n}$
+  \item $(a^m)^n = a^{mn}$
+  \item $a^\frac{m}{n} = \sqrt[n]{a^m}$
+  \item $a^{-m} = \frac{1}{a^m}$
+  \item $a^0 = 1, a \not = 0$
+\end{enumerate}
+
+\section{Exponential Functions}
+
+They take the form of $y = ab^x + c$ and can grow very rapidly.\lb
+The graph of exponential functions will be shown later.
+
+\section{Logarithms}
+
+\begin{enumerate}
+  \item $\ln x = \log_e(x)$
+  \item $\log x = \log_{10}(x)$
+  \item $\log_a(x) = \frac{\log_b(x)}{\log_b(a)} = \frac{\ln x}{\ln a}$, where $b$ can be any real number.
+  \item $\ln (xy) = \ln x + \ln y$
+  \item $\ln (\frac{x}{y}) = \ln x - \ln y$
+  \item $\ln (x^k) = k\ln x$
+\end{enumerate}
+
+\pagebreak
+
+\section{Exponential Growth and Decay}
+
+The exponential function in the form $$y = p\times a^{x - h} + k$$
+\begin{itemize}
+  \item will \textbf{grow} if $a > 1$; the function is increasing
+  \item will \textbf{decay} if $a < 1$; the function is decreasing
+\end{itemize}
+The following shows an exponentially growing (red) and a decaying (purple) function.
+
+\img{figs/exp.png}{0.6}{Exponential functions}
+
+\pagebreak
+
+\section{Modeling Exponential and Power functions}
+
+\begin{enumerate}
+  \item An exponential function in the form of $y = ab^x$ can be modeled using the linear function \textcolor{blue}{$\log y = x\log b + \log a$}
+  \item Power functions take the form $y = kx^n$ and \textcolor{blue}{$\log y = n\log x + \log a$} will be a straight line.
+\end{enumerate}
+
+\end{document}
