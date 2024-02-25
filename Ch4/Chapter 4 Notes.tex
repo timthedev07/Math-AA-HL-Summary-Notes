@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{amssymb}
+\let\oldsi\si
+\renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
+\usepackage{enumitem}
+\newcommand{\degsym}{^{\circ}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[2]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{Labeled diagram}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+
+\title{Math AA HL at KCA - Chapter 4 Notes}
+\author{Tim Bao 2023-2025}
+\date{February 25, 2024}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+
+\section{Arithmetic Progressions}
+
+\begin{itemize}
+  \setlength\itemsep{1em}
+  \item $u_n = u_1 + (n - 1)d$
+  \item $S_n = \frac{n}{2}\left[a + L\right]$, where $L$ is the given final term in the series
+  \item $S_n = \frac{n}{2}\left[2a + (n - 1)d\right]$
+  \item $S_{k \text{ to } n} = S_{n} - S_{k - 1}$
+\end{itemize}
+
+\section{Geometric Progressions}
+
+\begin{itemize}
+  \setlength\itemsep{1em}
+  \item $r = \frac{u_{n + 1}}{u_n}$
+  \item $u_n = u_1r^{n - 1}$
+  \item Convergent if and only if $-1 < r < 1$, otherwise divergent
+  \item $S_n = \frac{a(1 - r^n)}{1 - r}$
+  \item $S_\infty = \frac{a}{1 - r}$ if and only if $-1 < r < 1$ (sequence converges)
+\end{itemize}
+
+\section{Growth and Decay}
+
+$$u_n = u_0 \times r^n$$
+
+\begin{itemize}
+  \item $u_0 = $ initial amount
+  \item $r = $ growth/decay rate
+  \item $n = $ number of time periods
+  \item $u_n$ amount after $n$ time periods
+\end{itemize}
+
+\pagebreak
+
+\section{Simple Interest}
+
+Interest is calculated based on the initial amount; constant throughout
+
+$$I = Prt$$
+
+\begin{itemize}
+  \item $I$ = interest paid
+  \item $P$ = principle; initial amount
+  \item $r$ = annual interest rate
+  \item $t$ = time in years
+\end{itemize}
+
+\section{Compound Interest With GDC}
+
+$$FV = PV\left(1 + \frac{r}{100k}\right)^{kn}$$
+
+\begin{itemize}
+  \item $FV$ = future value
+  \item $PV$ = present value (negative \textbf{only in GDC} when borrowing, investing, depositing, etc.)
+  \item $k$ = number of compounding periods per year
+  \item $r\%$ = compound interest rate
+\end{itemize}
+
+\pagebreak
+
+\section{Inflation}
+
+Increasing prices of goods.\lb
+$$\text{indexed value} = PV \times r^n$$
+\begin{itemize}
+  \item $PV$ = current value
+  \item $r$ = rate of inflation (e.g. $1.04$)
+\end{itemize}
+Inflation reduces the \textbf{real value} of an investment.
+
+$$\text{real value} = \frac{FV}{r^n}$$
+
+\section{Depreciation}
+
+Loss in value.
+
+$$u_n = u_0(1 - d)^n$$
+\begin{itemize}
+  \item $u_n$ = depreciated value in $n$ years
+  \item $u_0$ = initial value
+  \item $d$ = rate of depreciation (e.g. $0.09 \equiv 9\%$)
+\end{itemize}
+
+\end{document}
