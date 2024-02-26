@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{outlines}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\let\oldsi\si
+\renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
+\usepackage{enumitem}
+\newcommand{\degsym}{^{\circ}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[3]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+\newcommand{\doubleimg}[4]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#1}
+      \caption{#2}
+      \label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#3}
+      \caption{#4}
+      \label{fig:sub2}
+    \end{subfigure}
+  \end{figure}
+\end{center}}
+
+
+
+\title{Math AA HL at KCA - Chapter 12 Notes}
+\author{Tim Bao 2023-2025}
+\date{February 26, 2024}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\section{Arrangements using Permuatations}
+
+The number of arrangements of $n$ elements is
+$$n!$$
+The number of ways to arrange a \textbf{multiset} (a collection that, unlike sets, allows for repeated instances) of $N$ elements is given by $$\frac{N!}{n_1n_2n_3\dots n_k}$$
+where
+\begin{itemize}
+  \item $n_i$ is the number of instances of each distinct element
+\end{itemize}
+
+
+\section{The Binomial Coefficient}
+
+The following finds the number of ways to choose $r$ groups from $n$ entries when \textit{the order does not matter}
+$$^{n}C_{r} = {n \choose r} = \frac{n!}{r!(n-r)!}$$
+
+\section{Permutation of Groups}
+
+The following finds the number of ways to choose $r$ unique groups from $n$ entries when \textit{the order does matter}
+$$^{n}P_{r} = ^{n}C_{r} \times r! = \frac{n!}{(n-r)!}$$
+
+
+\end{document}
