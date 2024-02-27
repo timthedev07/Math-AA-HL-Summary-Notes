@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{outlines}
+\usepackage{amssymb}
+\usepackage{outlines}
+\usepackage{caption}
+\usepackage{subcaption}
+\let\oldsi\si
+\renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
+\usepackage{enumitem}
+\newcommand{\degsym}{^{\circ}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[3]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+\newcommand{\doubleimg}[4]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#1}
+      \caption{#2}
+      \label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#3}
+      \caption{#4}
+      \label{fig:sub2}
+    \end{subfigure}
+  \end{figure}
+\end{center}}
+
+
+
+\title{Math AA HL at KCA - Chapter 10 to 11 Notes}
+\author{Tim Bao 2023-2025}
+\date{February 26, 2024}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\section{Radians, Arc Length, and Area of a Circle}
+Radian to degree conversion
+$$\theta \degsym = \frac{180}{\pi}\theta^c$$
+Degree to radian conversion
+$$\theta^c = \frac{\theta\degsym}{180}\pi$$
+Arc length $l$ enclosed by two radii $r$ at an angle $\theta$
+$$l = r\theta$$
+Area of a sector $$A = \frac{r^2\theta}{2}$$
+
+\section{Sine Rule and Area of a Triangle}
+
+Full sine rule $$2R = \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
+where
+\begin{itemize}
+  \item $R$ is the circumradius of the triangle
+\end{itemize}
+
+\noindent Given two sides $a, b$ and the angle in between $C$, the area of the triangle is given by $$A = \frac{1}{2}ab\sin C$$
+
+\section{Cosine Rule}
+
+Cosine rule for a side
+
+$$a^2 = b^2 + c^2 - 2bc\cos(A)$$
+For an angle
+$$\cos A = \frac{b^2 + c^2 - a^2}{2bc}$$
+
+\section{Cones}
+
+\img{cone.png}{0.4}{Cone}
+
+\begin{itemize}
+  \item $l^2 = h^2 + r^2$
+  \item $A = \pi r^2 + \pi r l$
+  \item $V = \frac{1}{3}\pi r^2h$
+\end{itemize}
+
+\section{Radian-Degree Special Values}
+
+\img{imagetrigfunctions9.jpg}{0.9}{Conversion Table}
+
+\section{Trigonometric Graphs}
+
+\img{graphs.png}{1}{Graphs}
+
+\noindent Periodicity:
+\begin{itemize}
+  \item $\tan(\theta + k\pi) = \tan(\theta), k\in \mathbb{Z}$
+  \item $\sin(\theta + 2k\pi) = \sin(\theta), k\in \mathbb{Z}$
+  \item $\cos(\theta + 2k\pi) = \cos(\theta), k\in \mathbb{Z}$
+\end{itemize}
+
+\pagebreak
+
+\subsection{Transformations of the Sine/Cosine Graphs}
+
+$$y = a\sin(b(x - c)) + d,\,\,\,\,\,\, a, b > 0$$
+\begin{itemize}
+  \item Amplitude = $|a|$
+  \item Period = $\dfrac{2\pi}{b}$
+  \item Principle axis $y = d$
+  \item Maximum $a + d$, minimum $-a + d$
+\end{itemize}
+It is obtained from the transformations
+\begin{itemize}
+  \item if $a < 0$ then a reflection in the $x$-axis
+  \item vertical stretch by factor $|a|$
+  \item horizontal stretch by factor $\dfrac{1}{b}$
+  \item a translation through $\begin{pmatrix}c\\d\end{pmatrix}$
+\end{itemize}
+
+\section{The Unit Circle}
+
+\img{unitcirc.png}{1}{The unit circle}
+
+\noindent Angles measured counter-clockwise from the positive $x$-axis are positive, and angles measured clockwise from the $x$-axis are negative.
+
+\noindent A "reference angle" is the angle $\theta$ in the first quadrant.
+\begin{itemize}
+  \item The corresponding angle in the \textit{second quadrant} is $\pi - \theta$
+  \item The corresponding angle in the \textit{third quadrant} is $\pi + \theta$
+  \item The corresponding angle in the \textit{fourth quadrant} is $- \theta$
+\end{itemize}
+Each angle's trigonometric ratios have the same \textit{magnitude} as its reference angle; using information about the quadrant will help to determine the signs.
+
+\pagebreak
+
+\section{Trigonometric Identities}
+\section{Compound Angle and Half Angle Formulae}
+
+\end{document}
