@@ -7,14 +7,23 @@
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage{outlines}
+\usepackage{amssymb}
+\usepackage{outlines}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{amssymb}
 \let\oldsi\si
 \renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
 \usepackage{enumitem}
 \newcommand{\degsym}{^{\circ}}
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 \newcommand{\lb}{\\[8pt]}
 \newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
 \newcommand{\img}[3]{\begin{center}
@@ -50,6 +59,8 @@
 \begin{document}
 
 \maketitle
+\pagebreak
+\tableofcontents
 \pagebreak
 
 \section{Forms of Complex Numbers and Operations}
@@ -132,6 +143,7 @@ $$\frac{z}{w} = \frac{r_1}{r_2}e^{i(\alpha - \beta)}$$
   \1 The $n$-th roots of a complex number \textbf{have the same modulus} and \textbf{equally divide a full turn}. This leads to implications such as
   \2 The roots join to form a circle with a radius equal to their mutual modulus.
   \2 By joining the edges, a regular $n$-sided polygon is formed.
+  \2 The area of the regular polygon formed by the $n$-th root of a complex number with modulus $r$ is given by $\dfrac{n}{2}\sqrt[n]{r^2}\sin(\frac{2\pi}{n})$
 \end{outline}
 
 \end{document}
