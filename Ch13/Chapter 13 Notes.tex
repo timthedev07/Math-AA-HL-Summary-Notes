@@ -8,6 +8,7 @@
 \usepackage{float}
 \usepackage{outlines}
 \usepackage{amssymb}
+\usepackage{outlines}
 \usepackage{caption}
 \usepackage{subcaption}
 \let\oldsi\si
@@ -53,7 +54,7 @@
 
 
 
-\title{Math AA HL at KCA - Chapter 12 Notes}
+\title{Math AA HL at KCA - Chapter 13 Notes}
 \author{Tim Bao 2023-2025}
 \date{February 26, 2024}
 
@@ -64,32 +65,21 @@
 \tableofcontents
 \pagebreak
 
-\section{Arrangements using Permuatations}
+\section{Continuity}
 
-The number of arrangements of $n$ elements is
-$$n!$$
-The number of ways to arrange a \textbf{multiset} (a collection that, unlike sets, allows for repeated instances) of $N$ elements is given by $$\frac{N!}{n_1n_2n_3\dots n_k}$$
-where
+A function is continuous if it can be drawn entirely over its domain without "lifting the pen".\lb
+The points of discontinuity are a set of points in the domain of a function at which the function is discontinuous.
+
+\pagebreak
+
+\section{The Laws of Limit}
+
+If $\lim\limits_{x\to a}{f(x)} = l$ and $\lim\limits_{x\to a}{g(x)} = m$, then
 \begin{itemize}
-  \item $n_i$ is the number of instances of each distinct element
+  \item Additive: $\lim\limits_{x\to a}{f(x) \pm g(x)} = l\pm m$
+  \item Multiplicative: $\lim\limits_{x\to a}{f(x) \cdot g(x)} = lm$
+  \item Reciprocal: $\lim\limits_{x\to a}\left(\dfrac{f(x)}{g(x)}\right) = \dfrac{l}{m}$
 \end{itemize}
 
-
-\section{The Binomial Coefficient}
-
-The following finds the number of ways to choose $r$ groups from $n$ entries when \textit{the order does not matter}
-$$^{n}C_{r} = {n \choose r} = \frac{n!}{r!(n-r)!}$$
-
-\section{Permutation of Groups}
-
-The following finds the number of ways to choose $r$ unique groups from $n$ entries when \textit{the order does matter}
-$$^{n}P_{r} = ^{n}C_{r} \times r! = \frac{n!}{(n-r)!}$$
-
-\section{Combinations with Repetition}
-
-Suppose a sequence of $n$ balls are to be colored from $m$ different colors, then the total number of possible arrangements with repetitions permitted is
-
-$$m^n$$
-Example: the number of binary number combinations using $m$ digits is $2^m$
 
 \end{document}
