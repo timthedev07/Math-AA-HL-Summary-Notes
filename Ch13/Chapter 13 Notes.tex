@@ -74,12 +74,27 @@ The points of discontinuity are a set of points in the domain of a function at w
 
 \section{The Laws of Limit}
 
-If $\lim\limits_{x\to a}{f(x)} = l$ and $\lim\limits_{x\to a}{g(x)} = m$, then
+If $\lim\limits_{x\to a}{f(x)} = L$ and $\lim\limits_{x\to a}{g(x)} = M$, then
 \begin{itemize}
-  \item Additive: $\lim\limits_{x\to a}{f(x) \pm g(x)} = l\pm m$
-  \item Multiplicative: $\lim\limits_{x\to a}{f(x) \cdot g(x)} = lm$
-  \item Reciprocal: $\lim\limits_{x\to a}\left(\dfrac{f(x)}{g(x)}\right) = \dfrac{l}{m}$
+  \item Additive: $\lim\limits_{x\to a}{f(x) \pm g(x)} = L\pm M$
+  \item Multiplicative: $\lim\limits_{x\to a}{f(x) \cdot g(x)} = LM$
+  \item Reciprocal: $\lim\limits_{x\to a}\left(\dfrac{f(x)}{g(x)}\right) = \dfrac{L}{M}$ if $M \not = 0$
+  \item L'Hôpital's: $\lim\limits_{x\to a}\left(\dfrac{f(x)}{g(x)}\right) = \lim\limits_{x\to a}\left(\dfrac{f'(x)}{g'(x)}\right)$
+\end{itemize}
+\bigskip
+Indeterminate forms and the corresponding ways of evaluation
+\begin{itemize}
+  \item $\dfrac{0}{0} \longrightarrow$ factorizing, lateral limits, or L'Hôpital's rule.
+  \item $\dfrac{\infty}{\infty} \longrightarrow$ comparison or L'Hôpital's rule
+  \item $\dfrac{1}{0} \longrightarrow$ lateral limits
 \end{itemize}
 
+\section{Existence of Limits}
+The limit $\lim\limits_{x\to a}{f(x)} = L$ exists $\iff$ $\lim\limits_{x\to a^-}{f(x)} = \lim\limits_{x\to a^+}{f(x)} = L$. I.e. approaching $x = a$ from both positive and negative directions, the function converges to the \textit{same limit} $y = L$.\lb
+The function diverges when there is not a limit or the limit is $\infty$.
+
+\pagebreak
+
+\section{Limits at Infinity}
 
 \end{document}
