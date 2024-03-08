@@ -68,7 +68,13 @@
 \section{Continuity}
 
 A function is continuous if it can be drawn entirely over its domain without "lifting the pen".\lb
-The points of discontinuity are a set of points in the domain of a function at which the function is discontinuous.
+The points of discontinuity are a set of points in the domain of a function at which the function is discontinuous.\lb
+A function $f(x)$ is continuous at a point $\iff$ $\lim\limits_{x\to a}f(x)$ exists $\iff$ $\lim\limits_{x\to a^-}{f(x)} = \lim\limits_{x\to a^+}{f(x)}$
+
+\subsection{Removable and Essential Discontinuities}
+
+There is a \textit{removable discontinuity} at $x = a$ if $f(a)$ does not exist and $\lim\limits_{x\to a}f(x)$ exists such that a newly modified function $g(x)$, satisfies $g(a) = \lim\limits_{x \to a}f(x)$. I.e. a new function can be defined such that the single "hole" would be "filled in" and the function is continuous at that point.\lb
+If such a modification cannot be made, then it is an \textit{essential discontinuity}. This is when the two pieces are completely disjointed and not connected by a "hole".
 
 \pagebreak
 
@@ -96,5 +102,15 @@ The function diverges when there is not a limit or the limit is $\infty$.
 \pagebreak
 
 \section{Limits at Infinity}
+
+Three cases for $\dfrac{f(x)}{g(x)}$
+\begin{enumerate}
+  \item $\deg(f) >\deg(g) \implies \lim\limits_{x\to\infty}{\dfrac{f(x)}{g(x)}}= \infty$
+  \item $\deg(f) =\deg(g) \implies \lim\limits_{x\to\infty}{\dfrac{f(x)}{g(x)}}$ is the quotient of the coefficients of the highest power of x of both polynomials respectively
+  \item $\deg(f) <\deg(g) \implies \lim\limits_{x\to\infty}{\dfrac{f(x)}{g(x)}}= 0$
+\end{enumerate}
+For the second case, if both $f(x)$ and $g(x)$ are cubics, then, the limit is simply the coefficient of $x^3$ in $f(x)$ divided by the coefficient of $x^3$ in $g(x)$\lb
+Limit at infinity of exponentials
+$$\lim\limits_{x\to\pm\infty} e^{\mp x} = 0$$
 
 \end{document}
