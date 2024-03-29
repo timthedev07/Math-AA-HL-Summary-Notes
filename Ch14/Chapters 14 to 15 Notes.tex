@@ -1,0 +1,153 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{outlines}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
+\usepackage{amssymb}
+\usepackage{outlines}
+\usepackage{caption}
+\usepackage{subcaption}
+\let\oldsi\si
+\renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
+\usepackage{enumitem}
+\newcommand{\degsym}{^{\circ}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[3]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+\newcommand{\doubleimg}[4]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#1}
+      \caption{#2}
+      \label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#3}
+      \caption{#4}
+      \label{fig:sub2}
+    \end{subfigure}
+  \end{figure}
+\end{center}}
+
+
+
+\title{Math AA HL at KCA - Chapter 14 Notes}
+\author{Tim Bao 2023-2025}
+\date{March 11th, 2024}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\section{Differentiation by First Principles}
+
+The derivative of a function is defined using limits as $$f'(x) = \lim\limits_{h \to 0}\frac{f(x + h) - f(x)}{h}$$
+
+\pagebreak
+
+\section{Differentiation Rules}
+
+\begin{itemize}
+  \item $\diff{}{x}x^n = nx^{n - 1}$
+  \item $\diff{}{x}\sin x = \cos x$
+  \item $\diff{}{x}\cos x = -\sin x$
+  \item $\diff{}{x}\tan x = \dfrac{1}{\cos^2 x} = \sec^2x = 1 + \tan^2 x$
+  \item $\diff{}{x}\csc x = -\csc x \cot x$
+  \item $\diff{}{x}\sec x = \tan x \sec x$
+  \item $\diff{}{x}\cot x = -\csc^2 x$
+  \item $\diff{}{x}\arcsin x = \dfrac{1}{\sqrt{1 - x^2}}$
+  \item $\diff{}{x}\arccos x = -\dfrac{1}{\sqrt{1 - x^2}} = -(\arcsin x)'$
+  \item $\diff{}{x}\arctan x = \dfrac{1}{1 + x^2}$
+  \item $\diff{}{x}e^x = e^x$
+  \item $\diff{}{x}a^x = a^x\cdot \ln a$
+  \item Product rule: $\diff{}{x}f(x)g(x) = f'(x)g(x) + f(x)g'(x)$
+  \item Quotient rule: $\diff{}{x}\dfrac{f(x)}{g(x)} = \dfrac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}$
+  \item Chain rule: $\diff{}{x}f(g(x)) = f'(g(x)) \times g'(x)$
+\end{itemize}
+
+\vspace{0.5cm}
+
+\noindent Basic differentiation rules are usually combined through the chain rule.
+
+\pagebreak
+
+\section{Equations of Tangents and Normals}
+
+Given a function $f(x)$, the equation of the tangent line at $x = a$ is $$y = f'(a)(x - a) + f(a)$$\lb
+The normal at $x = a$ is given by $$y = -\frac{1}{f'(a)}(x - a) + f(a)$$
+
+\vspace{2cm}
+
+\section{Increasing and Decreasing Functions over an Interval}
+
+\begin{itemize}
+  \item $f'(a) = 0 \iff$ $(a, f(a))$ is a \textit{stationary point}
+  \item $f'(a) > 0 $ for $x\in (a, b)$, then $f(x)$ is \textit{increasing} in the interval $(a, b)$
+  \item $f'(a) < 0 $ for $x\in (a, b)$, then $f(x)$ is \textit{decreasing} in the interval $(a, b)$
+\end{itemize}
+
+\pagebreak
+
+\section{Second Order Derivatives}
+
+The second-order derivative of $y = f(x)$ can be written as
+
+$$f''(x) = \diff[2]{y}{x}$$
+Interpreting the second-order derivative
+\begin{itemize}
+  \item $f''(a) = 0 \iff$ $(a, f(a))$ is a point of inflection, if the graph alters its concavity (concave to convex or vice versa) at that point
+  \item $f''(a) > 0 \iff$ convex/concave up at $x = a$; for a turning point, it is then a \textit{minimum point}
+  \item $f''(a) < 0 \iff$ concave down at $x = a$; for a turning point, it is then a \textit{maximum point}
+\end{itemize}
+
+\section{Sketching Gradient Functions}
+
+\bgroup
+\def\arraystretch{1.5}%
+\begin{center}
+  \begin{tabular}{c|c}
+    On $f(x)$            & On $f'(x)$                   \\
+    \hline
+    Turning point        & Cuts the $x$-axis            \\ \hline
+    Inflection point     & Turning point                \\ \hline
+    Positive gradient    & Above $x$-axis               \\ \hline
+    Negative gradient    & Below $x$-axis               \\ \hline
+    Vertical asymptote   & Vertical asymptote           \\ \hline
+    Horizontal asymptote & Horizontal asymptote $y = 0$ \\ \hline
+  \end{tabular}
+\end{center}
+\egroup
+
+\pagebreak
+
+\section{Implicit Differentiation}
+
+\end{document}
