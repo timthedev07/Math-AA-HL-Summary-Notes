@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{outlines}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
+\usepackage{amssymb}
+\usepackage{outlines}
+\usepackage{caption}
+\usepackage{subcaption}
+\let\oldsi\si
+\renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
+\usepackage{enumitem}
+\newcommand{\degsym}{^{\circ}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[3]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+\newcommand{\doubleimg}[4]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#1}
+      \caption{#2}
+      \label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#3}
+      \caption{#4}
+      \label{fig:sub2}
+    \end{subfigure}
+  \end{figure}
+\end{center}}
+\newcommand{\dx}{\mathrm{~d}x}
+
+
+\title{Math AA HL at KCA - Chapter 17 Notes}
+\author{Tim Bao 2023-2025 Cohort}
+\date{September 11th, 2024}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\section{Basic Rules of Integration}
+
+\begin{large}
+  \begin{align*}
+    \int u' \cdot u^n \dx & = \frac{u^{n+1}}{n+1} + C \\
+    \int \frac{u'}{u} \dx & = \ln |u| + C             \\
+    \int u' \cdot e^u \dx & = e^u + C                 \\
+    \int u' \cdot a^u \dx & = \frac{a^u}{\ln a} + C
+  \end{align*}
+\end{large}
+
+\pagebreak
+
+\section{Reverse Chain Rule}
+When you notice that a function is multiplied with its derivative, it's likely the reverse chain rule.
+
+\pagebreak
+
+\section{Trigonometric Integrals}
+
+\begin{large}
+  \addtolength{\jot}{1em}
+  \begin{align*}
+    \int \sin x \dx                      & = -\cos x + C                                                         \\
+    \int \cos x \dx                      & = \sin x + C                                                          \\
+    \int \tan x \dx                      & = -\ln |\cos x| + C                                                   \\ \\
+    \int \sec^2 x \dx                    & = \tan x + C                                                          \\
+    \int \sec x \tan x \dx               & = \sec x + C                                                          \\
+    \int \csc^2 x \dx                    & = -\cot x + C                                                         \\
+    \int \csc x \cot \dx                 & = -\csc x   + C                                                       \\ \\
+    \int \frac{1}{\sqrt{a^2 - x^2}} \dx  & = \arcsin \left(\frac{x}{a}\right) + C                                \\
+    \int -\frac{1}{\sqrt{a^2 - x^2}} \dx & = \arccos \left(\frac{x}{a}\right) + C                                \\
+    \int \frac{1}{a^2 + x^2} \dx         & = \frac{1}{a} \arctan \left(\frac{x}{a}\right) + C \text{ with }x < a
+  \end{align*}
+\end{large}
+
+\pagebreak
+\section{Integration by Parts}
+$$\int uv' \dx = uv - \int vu' \dx$$
+\pagebreak
+
+\section{Volume of Revolution}
+
+If we revolve the curve $y = f(x)$ about the $x$-axis, the volume of the solid generated is given by $$V = \int_{a}^{b} \pi y^2 \dx$$
+
+
+
+
+\end{document}
